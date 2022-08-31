@@ -15,6 +15,10 @@ const StyledChartBar = styled.div.attrs((props) => ({
   cursor: pointer;
   height: ${(props) => props.height};
   background-color: ${(props) => props.backgroundColor};
+
+  @media (max-width: 600px) {
+    width: 35px;
+  }
 `;
 
 const StyledAmount = styled.div`
@@ -25,6 +29,7 @@ const StyledAmount = styled.div`
   position: absolute;
   font-size: 1.2rem;
   top: -2rem;
+  z-index: 2;
 `;
 
 export const ChartBar = ({ day, amount, totalMaximum, totalSecond }) => {

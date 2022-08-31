@@ -10,6 +10,10 @@ const StyledMain = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media (max-width: 600px) {
+    width: 350px;
+  }
 `;
 
 const StyledHr = styled.hr`

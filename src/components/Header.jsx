@@ -12,6 +12,10 @@ const StyledHeader = styled.div`
   align-items: center;
   margin-bottom: 1rem;
 
+  @media (max-width: 600px) {
+    width: 350px;
+  }
+
   > div {
     color: white;
     padding: 1.5rem;
