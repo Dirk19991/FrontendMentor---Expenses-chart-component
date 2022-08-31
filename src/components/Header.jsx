@@ -4,7 +4,7 @@ import { Icon } from './Icon';
 
 const StyledHeader = styled.div`
   height: 120px;
-  width: 450px;
+  width: 550px;
   border-radius: 23px;
   background-color: var(--softRed);
   display: flex;

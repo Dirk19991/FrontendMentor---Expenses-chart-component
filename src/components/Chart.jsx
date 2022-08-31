@@ -10,9 +10,12 @@ const StyledChart = styled.div`
 `;
 
 export const Chart = ({ data }) => {
-  const dataPointValues = data.map((dataPoint) => dataPoint.amount);
+  const sortedDataPointValues = data
+    .map((dataPoint) => dataPoint.amount)
+    .sort((a, b) => a - b);
 
-  const totalMaximum = Math.max(...dataPointValues);
+  const totalMaximum = sortedDataPointValues[sortedDataPointValues.length - 1];
+  const totalSecond = sortedDataPointValues[sortedDataPointValues.length - 2];
 
   return data.map((elem) => {
     return (
@@ -20,7 +23,8 @@ export const Chart = ({ data }) => {
         <ChartBar
           day={elem.day}
           amount={elem.amount}
-          maxAmount={totalMaximum}
+          totalMaximum={totalMaximum}
+          totalSecond={totalSecond}
         />
         <div>{elem.day}</div>
       </StyledChart>

@@ -3,8 +3,8 @@ import { Spending } from './Spending';
 import { Total } from './Total';
 
 const StyledMain = styled.div`
-  height: 400px;
-  width: 450px;
+  height: 450px;
+  width: 550px;
   border-radius: 23px;
   background-color: var(--veryPaleOrange);
   display: flex;
@@ -12,10 +12,15 @@ const StyledMain = styled.div`
   justify-content: space-between;
 `;
 
+const StyledHr = styled.hr`
+  width: 90%;
+`;
+
 export const Main = () => {
   return (
     <StyledMain>
       <Spending />
+      <StyledHr />
       <Total />
     </StyledMain>
   );

@@ -5,7 +5,7 @@ import { Chart } from './Chart';
 const StyledSpending = styled.div`
   display: flex;
   flex-direction: column;
-  height: 80%;
+  height: 70%;
 `;
 
 const Text = styled.div`
@@ -19,6 +19,7 @@ const StyledChart = styled.div`
   display: flex;
   justify-content: space-around;
   height: 80%;
+  padding: 1rem;
 `;
 
 export const Spending = () => {
