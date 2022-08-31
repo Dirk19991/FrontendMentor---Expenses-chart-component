@@ -23,11 +23,11 @@ const Sum = styled.div`
   font-weight: 700;
 `;
 
-export const Total = () => {
+export const Total = ({ data }) => {
   return (
     <StyledTotal>
       <Text>Total spending this month</Text>
-      <Sum>$478.33</Sum>
+      <Sum>${data.reduce((a, b) => a + b.amount, 0)}</Sum>
     </StyledTotal>
   );
 };

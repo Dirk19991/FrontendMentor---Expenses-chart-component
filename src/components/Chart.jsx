@@ -15,16 +15,14 @@ export const Chart = ({ data }) => {
     .sort((a, b) => a - b);
 
   const totalMaximum = sortedDataPointValues[sortedDataPointValues.length - 1];
-  const totalSecond = sortedDataPointValues[sortedDataPointValues.length - 2];
 
-  return data.map((elem) => {
+  return data.map((elem, setSpendings) => {
     return (
       <StyledChart key={elem.day}>
         <ChartBar
           day={elem.day}
           amount={elem.amount}
           totalMaximum={totalMaximum}
-          totalSecond={totalSecond}
         />
         <div>{elem.day}</div>
       </StyledChart>

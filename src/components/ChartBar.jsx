@@ -32,7 +32,7 @@ const StyledAmount = styled.div`
   z-index: 2;
 `;
 
-export const ChartBar = ({ day, amount, totalMaximum, totalSecond }) => {
+export const ChartBar = ({ amount, totalMaximum }) => {
   const [isHovered, setIsHovered] = React.useState(false);
 
   let barFillHeight = '0%';
@@ -41,21 +41,11 @@ export const ChartBar = ({ day, amount, totalMaximum, totalSecond }) => {
     barFillHeight = Math.round((amount / totalMaximum) * 80) + '%';
   }
 
-  let color;
-
-  if (amount === totalMaximum) {
-    color = 'var(--сyan)';
-  } else if (amount === totalSecond) {
-    color = 'var(--cream)';
-  } else {
-    color = 'var(--softRed)';
-  }
-
   return (
     <StyledChartBar
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      backgroundColor={color}
+      backgroundColor={isHovered ? 'var(--сyan)' : 'var(--softRed)'}
       height={barFillHeight}>
       {isHovered && <StyledAmount>${amount}</StyledAmount>}
     </StyledChartBar>
